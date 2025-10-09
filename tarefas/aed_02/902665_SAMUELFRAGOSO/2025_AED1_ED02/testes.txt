@@ -1,0 +1,113 @@
+Aluno: Samuel Fragoso
+Matrícula: 902665
+
+AED1 - Estudo Dirigido 02
+Testes realizados
+
+------------------------------------------------
+Exercício 0211 - Par e negativo, ou ímpar e positivo
+Entradas -> Saídas
+-6  -> Par e negativo
+-3  -> Não se enquadra
+0   -> Par e negativo (zero conta como par)
+3   -> Ímpar e positivo
+6   -> Não se enquadra
+
+------------------------------------------------
+Exercício 0212 - Par e > -15, ou ímpar e < 15
+Entradas -> Saídas
+-60 -> Não se enquadra
+-13 -> Ímpar e < 15
+0   -> Par e > -15
+13  -> Ímpar e < 15
+26  -> Par e > -15
+39  -> Ímpar e < 15
+
+------------------------------------------------
+Exercício 0213 - Intervalo aberto (25:60)
+Entradas -> Saídas
+15 -> Fora
+25 -> Fora
+30 -> Dentro
+35 -> Dentro
+60 -> Fora
+
+------------------------------------------------
+Exercício 0214 - Intervalo fechado [25:60]
+Entradas -> Saídas
+5  -> Fora
+20 -> Fora
+45 -> Dentro
+60 -> Dentro
+65 -> Fora
+
+------------------------------------------------
+Exercício 0215 - Interseção [12:24] e (20:50)
+Entradas -> Saídas
+5   -> Nenhum intervalo
+15  -> Apenas [12:24]
+20  -> Apenas [12:24]
+22  -> Interseção
+25  -> Apenas (20:50)
+30  -> Apenas (20:50)
+60  -> Nenhum
+
+------------------------------------------------
+Exercício 0216 - Primeiro par e segundo ímpar
+Entradas -> Saídas
+(5,15)   -> Não atende
+(35,40)  -> Não atende
+(60,72)  -> Não atende
+(50,63)  -> Atende
+(89,98)  -> Não atende
+
+------------------------------------------------
+Exercício 0217 - Primeiro par positivo e segundo ímpar negativo
+Entradas -> Saídas
+(-5,-15)  -> Não atende
+(-13,20)  -> Não atende
+(-30,45)  -> Não atende
+(60,72)   -> Não atende
+(50,-63)  -> Atende
+
+------------------------------------------------
+Exercício 0218 - Comparar com 1/3 do segundo
+Entradas -> Saídas
+(0.5,1.5)   -> Igual
+(3.0,3.0)   -> Maior
+(-5.5,6.4)  -> Menor
+(7.8,-8.7)  -> Menor
+
+------------------------------------------------
+Exercício 0219 - Segundo entre primeiro e último
+Entradas -> Saídas
+(0.75,0.5,1.8) -> Não está entre
+(3.6,4.5,2.4)  -> Está entre
+(6.3,7.2,6.5)  -> Está entre
+(9.8,8.9,8.9)  -> Não avaliar (iguais)
+
+------------------------------------------------
+Exercício 0220 - Segundo NÃO entre primeiro e último
+Entradas -> Saídas
+(0.75,0.5,1.8) -> Não está entre
+(3.6,4.5,2.4)  -> Está entre
+(6.3,7.2,6.5)  -> Está entre
+(9.8,8.9,8.9)  -> Não avaliar (iguais)
+
+------------------------------------------------
+Exercício 02E1 - Primeiro char entre ou igual
+Entradas -> Saídas
+('a','e','c') -> Está entre
+('e','a','c') -> Fora
+('a','c','e') -> Está entre
+('e','c','a') -> Fora
+('a','e','a') -> Igual
+
+------------------------------------------------
+Exercício 02E2 - Primeiro char fora do intervalo
+Entradas -> Saídas
+('a','e','c') -> Dentro
+('e','a','c') -> Fora
+('a','c','e') -> Dentro
+('e','c','a') -> Fora
+('a','e','a') -> Não avaliar (iguais)
