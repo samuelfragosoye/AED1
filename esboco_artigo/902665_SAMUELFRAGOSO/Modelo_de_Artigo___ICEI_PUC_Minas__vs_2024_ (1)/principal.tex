@@ -1,0 +1,135 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Template de Artigo Adaptado para Trabalho de Conclusão de Curso - SI Contagem - PUCMINAS %%%%%%%%%%%%%%%%%%%%%%%%
+%% codificação UTF-8 - Abntex - Latex -  							     %%
+%% Autor da primeira versão:    Fábio Leandro Rodrigues Cordeiro  (fabioleandro@pucminas.br)                            %% 
+%% Co-autor da primeira versão: Prof. João Paulo Domingos Silva, Harison da Silva e Anderson Carvalho                   %%
+%% Revisores normas NBR (Padrão PUC Minas) da primeira versão: Helenice Rego Cunha e Prof. Theldo Cruz                  %%
+%% Versão: 1.1     18 de dezembro 2015                     	                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{times}
+\usepackage{abakos}  %pacote com padrão da Abakos baseado no padrão da PUC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capa da revista
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setcounter{page}{80} %iniciar contador de pagina de valor especificado
+\newcommand{\monog}{Os Tipos Lógicos de Pesquisa: Uma Síntese Baseada na Obra de Gilson Volpato}
+%\newcommand{\monogES}{Article template Institute of Mathematical Sciences and Informatics}
+\newcommand{\tipo}{Artigo}  % Especificar a seção tipo do trabalho: Artigo, Resumo, Tese, Dociê etc
+%\newcommand{\origem}{Brasil}
+%\newcommand{\editorial}{Belo Horizonte, p. 01-11, nov. 2024}  % p. xx-xx – páginas inicial-final do artigo
+\newcommand{\editorial}{}  
+\newcommand{\lcc}{\scriptsize{Licença Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported}}
+
+%%%%%%%%%%%%%%%%%INFORMAÇÕES SOBRE AUTOR PRINCIPAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\AutorA}{Samuel Teodoro Albuquerque Fragoso}
+\newcommand{\funcaoA}{}
+\newcommand{\emailA}{\href{mailto:samuel.fragoso@sga.pucminas.br}{samuel.fragoso@sga.pucminas.br}}
+\newcommand{\cursA}{Aluno(a) do Programa de Graduação em Ciência da Computação}
+
+%\newcommand{\AutorB}{Nome completo do(a) orientador(a)}
+%\newcommand{\funcaoB}{}
+%\newcommand{\emailB}{\href{mailto:xxx@sga.pucminas.br}{xxx@pucminas.br}}
+%\newcommand{\cursB}{Professor(a) do Programa de Graduação em Sistemas de Informação}
+% 
+% Definir macros para o nome da Instituição, da Faculdade, etc.
+\newcommand{\univ}{Pontifícia Universidade Católica de Minas Gerais}
+
+\newcommand{\keyword}[1]{\textsf{#1}}
+
+%Para as URLS não ultrapassarem a margem
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+\usepackage{adjustbox} % reduzir tamanho figuras
+
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+\tikzset{
+  basic/.style  = {draw, text width=3cm, drop shadow, font=\sffamily, rectangle},
+  root/.style   = {basic, rounded corners=2pt, thin, align=center,
+                   fill=blue!30},
+  level 2/.style = {basic, rounded corners=6pt, thin,align=center, fill=green!30,
+                   text width=8em},
+  level 3/.style = {basic, thin, align=left, fill=pink!60, text width=6.5em}
+}
+
+\begin{document}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Pagina de titulo
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\includegraphics[scale=0.2]{figuras/brasao.jpg} \\
+PONTIFÍCIA UNIVERSIDADE CATÓLICA DE MINAS GERAIS \\
+Instituto de Ciências Exatas e de Informática
+
+% \vspace{1.0cm}
+
+\end{center}
+
+ \vspace{0cm} {
+ \singlespacing \Large{\monog \symbolfootnote[1]{Artigo apresentado ao Instituto de Ciências Exatas e Informática da Pontifícia Universidade Católica de \linebreak Minas Gerais, campus Coração Eucarístico.} \\ }
+ % \normalsize{\monogES}
+ }
+
+\vspace{1.0cm}
+
+\begin{flushright}
+\singlespacing 
+\normalsize{\AutorA \footnote{\funcaoA \cursA \,-- \emailA . }} \\
+%\normalsize{\AutorC \footnote{\funcaoC \cursC \,-- \emailC . }} \\
+%\normalsize{\AutorD \footnote{\funcaD \cursD \,-- \emailD . }} \\
+\end{flushright}
+\thispagestyle{empty}
+
+\vspace{1.0cm}
+
+\begin{abstract}
+\noindent
+O vídeo de Gilson Volpato elabora que existem 3 tipos de pesquisas, a primeira que não precisa de hipóteses para ter suas perguntas respondidas e as outras duas que precisam da elaboração de hipóteses para guiar o pesquisador ao resultado. Os dois tipos que precisam de hipóteses são divididos em mais dois tipos, que são associação e interferência, as duas testam a relação entre duas ou mais variáveis. No caso da associação é definida quando há associação mas não efito e a interferência quando é encontrada uma relação entre causa e efeito. 
+\\\textbf{\keyword{Palavras-chave:}} Metodologia Científica; Tipos de Pesquisa; Hipótese; Causalidade.
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{english}
+\begin{abstract}
+\noindent
+Gilson Volpato's video explains that there are 3 types of research: the first one does not require hypotheses to have its questions answered, and the other two require the elaboration of hypotheses to guide the researcher to the result. The two types that need hypotheses are divided into two further types, which are association and inference; both test the relationship between two or more variables. Association is defined when there is a relationship but no effect, and inference is when a cause-and-effect relationship is found.
+\\\textbf{\keyword{Keywords:}} Scientific Methodology; Research Types; Hypothesis; Causality.
+\end{abstract}
+
+\selectlanguage{brazilian}
+ \onehalfspace  % espaçamento 1.5 entre linhas
+ \setlength{\parindent}{1.25cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INICIO DO TEXTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{textos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FIM DO TEXTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \selectlanguage{brazil}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inicio bibliografia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newpage
+\singlespace{
+\renewcommand\refname{REFERÊNCIAS}
+\bibliography{bibliografia}
+}
+
+%Inclusão do arquivo abntex2-alf.bst como solução para adequação à ABNT NBR 10520:2023 quanto às citações, que não são mais em caixa-alta
+\bibliographystyle{abntex2-alf.bst}
+
+\end{document}
