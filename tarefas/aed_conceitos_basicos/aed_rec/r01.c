@@ -259,7 +259,7 @@ void procedimento_04() {
     int count_separadores = 0;
 
     printf("Digite a cadeia: ");
-    fgets(cadeia, 100, stdin); [cite: 59]
+    fgets(cadeia, 100, stdin); 
 
     for (i = 0; cadeia[i] != '\0'; i++) {
         c = cadeia[i];
@@ -320,19 +320,19 @@ void procedimento_05() {
     double media1 = 0.0, media2 = 0.0, media3 = 0.0;
 
     printf("n= ");
-    scanf("%d", &n); [cite: 68]
+    scanf("%d", &n); 
 
     for (i = 0; i < n; i++) {
         printf("x= ");
-        scanf("%lf", &x); [cite: 69]
+        scanf("%lf", &x); 
 
-        if (x < -27.25) { [cite: 70]
+        if (x < -27.25) { 
             soma1 += x;
             count1++;
-        } else if (x >= -21.75 && x <= 72.5) { [cite: 71]
+        } else if (x >= -21.75 && x <= 72.5) { 
             soma2 += x;
             count2++;
-        } else if (x > 72.5) { [cite: 72]
+        } else if (x > 72.5) { 
             soma3 += x;
             count3++;
         }
@@ -354,7 +354,7 @@ void procedimento_05() {
     printf("Media (x > 72.5): %lf\n", media3);
 
     double maiorMedia = maior_de_tres(media1, media2, media3);
-    printf("A maior media e: %lf\n", maiorMedia); [cite: 72]
+    printf("A maior media e: %lf\n", maiorMedia); 
 }
 
 void method_05 (){
@@ -389,17 +389,17 @@ void procedimento_06() {
     double soma_total = 0.0;
 
     printf("a= ");
-    scanf("%d", &a); [cite: 79]
+    scanf("%d", &a); 
     printf("b= ");
-    scanf("%d", &b); [cite: 79]
+    scanf("%d", &b); 
 
     // Usar do-while [cite: 86]
     do {
         printf("x= ");
-        scanf("%d", &x); [cite: 80]
+        scanf("%d", &x); 
 
-        if (x != -1) { [cite: 81]
-            if (estaNoIntervaloAberto(x, a, b)) { [cite: 82]
+        if (x != -1) { 
+            if (estaNoIntervaloAberto(x, a, b)) { 
                 soma_total += calcularTermo(x);
             }
         }
@@ -431,18 +431,18 @@ void procedimento_07() {
     int count_total = 0; // Total de valores válidos lidos
 
     printf("a= ");
-    scanf("%lf", &a); [cite: 92]
+    scanf("%lf", &a); 
     printf("b= ");
-    scanf("%lf", &b); [cite: 92]
+    scanf("%lf", &b); 
 
     // Usar do-while [cite: 103]
     do {
         printf("x= ");
-        scanf("%lf", &x); [cite: 93]
+        scanf("%lf", &x); 
 
-        if (x != 0.0) { [cite: 95]
+        if (x != 0.0) { 
             count_total++;
-            if (estaNoIntervaloAbertoReal(x, a, b)) { [cite: 97]
+            if (estaNoIntervaloAbertoReal(x, a, b)) { 
                 count_dentro++;
             } else {
                 count_fora++;
@@ -453,7 +453,7 @@ void procedimento_07() {
                 }
             }
         }
-    } while (x != 0.0); [cite: 94]
+    } while (x != 0.0); 
 
     printf("Valores DENTRO do intervalo ]%lf:%lf[ : %d\n", a, b, count_dentro);
     printf("Valores FORA do intervalo: %d\n", count_fora);
@@ -484,21 +484,21 @@ void method_07 (){
  * Funções auxiliares para Ex 08 [cite: 114]
  */
 int isCrescente(double x, double y, double z) {
-    return (x < y && y < z); [cite: 111]
+    return (x < y && y < z); 
 }
 
 int isDecrescente(double x, double y, double z) {
-    return (x > y && y > z); [cite: 112]
+    return (x > y && y > z); 
 }
 
-double getMaior(double x, double y, double z) { [cite: 123]
+double getMaior(double x, double y, double z) { 
     double maior = x;
     if (y > maior) maior = y;
     if (z > maior) maior = z;
     return maior;
 }
 
-double getMenor(double x, double y, double z) { [cite: 126]
+double getMenor(double x, double y, double z) { 
     double menor = x;
     if (y < menor) menor = y;
     if (z < menor) menor = z;
@@ -509,18 +509,18 @@ void procedimento_08() {
     double x, y, z;
     
     printf("x= ");
-    scanf("%lf", &x); [cite: 110]
+    scanf("%lf", &x); 
     printf("y= ");
-    scanf("%lf", &y); [cite: 110]
+    scanf("%lf", &y); 
     printf("z= ");
-    scanf("%lf", &z); [cite: 110]
+    scanf("%lf", &z); 
 
     if (isCrescente(x, y, z)) {
-        printf("Os valores estao em ordem CRESCENTE.\n"); [cite: 111]
+        printf("Os valores estao em ordem CRESCENTE.\n"); 
     } else if (isDecrescente(x, y, z)) {
-        printf("Os valores estao em ordem DECRESCENTE.\n"); [cite: 112]
+        printf("Os valores estao em ordem DECRESCENTE.\n"); 
     } else {
-        printf("Os valores NAO estao em ordem.\n"); [cite: 112]
+        printf("Os valores NAO estao em ordem.\n"); 
         printf("Maior valor: %lf\n", getMaior(x, y, z));
         printf("Menor valor: %lf\n", getMenor(x, y, z));
     }
@@ -540,11 +540,11 @@ void method_08 (){
  */
 // Compara o código ASCII [cite: 132]
 int isCrescenteChar(char x, char y, char z) {
-    return (x < y && y < z); [cite: 130]
+    return (x < y && y < z); 
 }
 
 int isDecrescenteChar(char x, char y, char z) {
-    return (x > y && y > z); [cite: 131]
+    return (x > y && y > z); 
 }
 
 // DICA: [cite: 133, 143]
@@ -557,18 +557,18 @@ void procedimento_09() {
     
     // Usar " %c" para consumir newlines/espaços do buffer
     printf("x= ");
-    scanf(" %c", &x); [cite: 129]
+    scanf(" %c", &x); 
     printf("y= ");
-    scanf(" %c", &y); [cite: 129]
+    scanf(" %c", &y); 
     printf("z= ");
-    scanf(" %c", &z); [cite: 129]
+    scanf(" %c", &z); 
 
     if (isCrescenteChar(x, y, z)) {
-        printf("Os caracteres estao em ordem CRESCENTE.\n"); [cite: 130]
+        printf("Os caracteres estao em ordem CRESCENTE.\n"); 
     } else if (isDecrescenteChar(x, y, z)) {
-        printf("Os caracteres estao em ordem DECRESCENTE.\n"); [cite: 131]
+        printf("Os caracteres estao em ordem DECRESCENTE.\n"); 
     } else {
-        printf("Os caracteres NAO estao em ordem.\n"); [cite: 131]
+        printf("Os caracteres NAO estao em ordem.\n"); 
     }
 }
 
@@ -599,16 +599,16 @@ void procedimento_10() {
     char x[100], y[100], z[100];
     
     printf("Cadeia x= ");
-    scanf("%s", x); [cite: 146]
+    scanf("%s", x); 
     printf("Cadeia y= ");
-    scanf("%s", y); [cite: 146]
+    scanf("%s", y);
     printf("Cadeia z= ");
-    scanf("%s", z); [cite: 146]
+    scanf("%s", z); 
 
     if (isCrescenteStr(x, y, z)) {
         printf("As cadeias estao em ordem CRESCENTE.\n");
     } else if (isDecrescenteStr(x, y, z)) {
-        printf("As cadeias estao em ordem DECRESCENTE.\n"); [cite: 147]
+        printf("As cadeias estao em ordem DECRESCENTE.\n"); 
     } else {
         char *menor = x;
         char *maior = x;
@@ -621,7 +621,7 @@ void procedimento_10() {
         if (strcmp(y, maior) > 0) maior = y;
         if (strcmp(z, maior) > 0) maior = z;
 
-        printf("As cadeias NAO estao em ordem.\n"); [cite: 148]
+        printf("As cadeias NAO estao em ordem.\n"); 
         printf("Menor cadeia (primeira em ordem alf.): %s\n", menor);
         printf("Maior cadeia (ultima em ordem alf.): %s\n", maior);
     }
