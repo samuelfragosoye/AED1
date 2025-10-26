@@ -1922,3 +1922,57 @@ int main()
     IO_pause("Apertar ENTER para terminar");
     return (0);
 }
+/*
+  Comentarios sobre as Saidas - Estudo Dirigido 10 (C - Exemplo1000.c)
+ 
+  NOTA: Varios metodos dependem de arquivos (ARRAY1.TXT, MATRIX1.TXT, DADOS.TXT)
+  criados por metodos anteriores. E recomendado executar os metodos
+  03, 08 e 11 primeiro para gerar esses arquivos.
+
+  -------------------------------------------------
+  Exemplos (Metodos 01-10)
+  -------------------------------------------------
+ 
+  * Method 01: Exibe um array de 5 posicoes (1 a 5) definido no codigo.
+  * Method 02: Pede ao usuario o tamanho (N) e os N valores do array. Imprime o array.
+  * Method 03: Pede ao usuario o tamanho e os valores. Salva em "ARRAY1.TXT".
+  * Method 04: Le "ARRAY1.TXT" e imprime o array na tela.
+      * Dependencia: Method 03 (para criar ARRAY1.TXT).
+  * Method 05: Le "ARRAY1.TXT", cria uma copia em memoria, e imprime "Original" e "Copia" (devem ser identicos).
+      * Dependencia: Method 03.
+  * Method 06: Exibe uma matriz 3x3 definida no codigo.
+  * Method 07: Pede ao usuario as dimensoes (linhas, colunas) e os valores da matriz. Imprime a matriz.
+  * Method 08: Pede ao usuario as dimensoes e valores. Salva em "MATRIX1.TXT".
+  * Method 09: Le "MATRIX1.TXT" e imprime a matriz na tela.
+      * Dependencia: Method 08 (para criar MATRIX1.TXT).
+  * Method 10: Le "MATRIX1.TXT", cria uma copia em memoria, e imprime "Original" e "Copia" (devem ser identicas).
+      * Dependencia: Method 08.
+
+  -------------------------------------------------
+  Exercicios (Metodos 11-20 e E1-E2)
+  -------------------------------------------------
+
+  * Method 11 (1011): Pede N, min, max. Gera N valores aleatorios, imprime-os e salva em "DADOS.TXT".
+  * Method 12 (1012): Le "DADOS.TXT". Pede um valor. Imprime o array e se o valor "FOI encontrado" ou "NAO".
+      * Dependencia: Method 11 (para criar DADOS.TXT).
+  * Method 13 (1013): Le "DADOS.TXT" e "ARRAY1.TXT". Imprime ambos e diz se sao "IGUAIS" ou "DIFERENTES".
+      * Dependencias: Method 11 e Method 03.
+  * Method 14 (1014): Le "DADOS.TXT" (arr1) e "ARRAY1.TXT" (arr2). Pede "k". Imprime o "Arranjo Soma" (arr1 + k*arr2).
+      * Dependencias: Method 11 e Method 03 (devem ter o mesmo tamanho).
+  * Method 15 (1015): Le "DADOS.TXT". Imprime o array e diz se "ESTA em ordem decrescente" ou "NAO ESTA".
+      * Dependencia: Method 11.
+  * Method 16 (1016): Le "MATRIX1.TXT". Imprime a "Matriz Original" e a "Matriz Transposta".
+      * Dependencia: Method 08.
+  * Method 17 (1017): Le "MATRIX1.TXT". Imprime a matriz e diz se ela "CONTEM APENAS valores iguais a zero" ou "NAO".
+      * Dependencia: Method 08.
+  * Method 18 (1018): Le "MATRIX1.TXT" 2x. Testa se sao iguais (saida: "IGUAIS"). Modifica M2[0][0]. Testa de novo (saida: "DIFERENTES").
+      * Dependencia: Method 08.
+  * Method 19 (1019): Le "MATRIX1.TXT" 2x (M1 e M2). Pede "k". Imprime a "Matriz Soma" (M1 + k*M2).
+      * Dependencia: Method 08.
+  * Method 20 (1020): Le "MATRIX1.TXT" e "MATRIX2.TXT". Se (Colunas M1 == Linhas M2), imprime a "Matriz Produto".
+      * Dependencias: Method 08 (para M1) e outro arquivo (MATRIX2.TXT) (criado tambem pelo 08 com dimensoes compativeis).
+  * Method E1 (10E1): Le "DADOS.TXT". Imprime o "Arranjo Original" e o "Arranjo Ordenado (Decrescente)".
+      * Dependencia: Method 11.
+  * Method E2 (10E2): Le M1 e M2. Calcula o Produto. Imprime M1, M2, Produto, e diz se o Produto "E' uma matriz identidade" ou "NAO E'".
+      * Dependencias: Method 08 (para M1 e M2).
+*/
