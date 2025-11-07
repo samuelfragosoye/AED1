@@ -1,42 +1,48 @@
 #include "io.h"
 #include <math.h>
 
-int SomaAteN(int n){  
-    int i;
-    int resultado = 0;
-    for (i = 1; i <= n; i++)
-    {
-       resultado = resultado + i;
-    }
- return resultado;
-}
+struct Ponto {
+    double x;
+    double y;
+};
+
 void method_01 (){
-    int numero = 5;
-    int soma = SomaAteN(numero);
+    double distancia;
+    IO_id("Method 01");
+    FILE *arquivo = fopen("DADOS_1.TXT", "r");
 
+    if (arquivo == NULL){
+        printf("ERRO");
+    } else {
+        double x1, x2, y1, y2;
 
-    printf("A soma dos numeros de 1 ate %d e': %d\n", numero, soma);
+        fscanf(arquivo, "%lf %lf", &x1, &y1);
+
+        FILE *saida = fopen("SAIDA_1.TXT","w");
+        while(fscanf(arquivo, "%lf %lf", &x2, &y2)== 2 && (x2 != 0.0 || y2 != 0.0)){
+         distancia = sqrt(pow((x2-x1), 2.0)+pow((y2-y1), 2.0));
+         fprintf(saida, "%lf\n", distancia);
+         x1 = x2;
+         y1 = y2;
+        }
+        fclose (saida);
+        fclose(arquivo);
+    }
 }
 
-
-  /*
+/*
 Funcao principal.
-@return codigo de encerramento
-@param argc - quantidade de parametros na linha de comandos
-@param argv - arranjo com o grupo de parametros na linha de comandos
 */
 int main ( int argc, char* argv [ ] )
 {
-    // definir dado
+// definir dado
 int opcao = 0;
 // identificar
 printf ( "%s\n", "Exemplo0100 - Programa = v0.0" );
 printf ( "%s\n", "Autor: Samuel Fragoso" );
 printf ( "\n" ); // mudar de linha
-
 // acoes
 // repetir
-    
 do
 {
 // para mostrar opcoes
@@ -52,20 +58,17 @@ printf ( "\n" );
 printf ( "\n%s", "Opcao = " );
 scanf ( "%d", &opcao );
 getchar( ); // para limpar a entrada de dados
-
 // para mostrar a opcao lida
 printf ( "\n%s%d", "Opcao = ", opcao );
-
 // escolher acao dependente da opcao
 switch ( opcao )
 {
-case 0:  break;
+case 0: /* nao fazer nada */ break;
 case 1: method_01 ( ); break;
-/*case 2: method_02 ( ); break;
-case 3: method_03 ( ); break;
-case 4: method_04 ( ); break;
-case 5: method_05 ( ); break;*/
-
+//case 2: method_02 ( ); break;
+//case 3: method_03 ( ); break;
+//case 4: method_04 ( ); break;
+//case 5: method_05 ( ); break;
 default: // comportamento padrao
 printf ( "\nERRO: Opcao invalida.\n" );
 break;
@@ -75,6 +78,5 @@ while ( opcao != 0 );
 // encerrar
 printf ( "\n\nApertar ENTER para terminar." );
 getchar( ); // aguardar por ENTER
-
-return 0 ; // voltar ao SO (sem erros)
-}
+return ( 0 ); // voltar ao SO (sem erros)
+} // end main ( )
