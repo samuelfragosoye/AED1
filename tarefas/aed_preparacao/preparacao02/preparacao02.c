@@ -30,6 +30,51 @@ void method_01 (){
     }
 }
 
+struct ArranjoDouble {
+  int tamanho;
+  double *dados;
+};
+
+void method_02(){
+    IO_id("Method 02");
+    FILE *arquivo = fopen("DADOS_1.TXT", "r");
+    int contador = 0;
+    double temp;
+
+    while (fscanf(arquivo, "%lf", &temp) == 1){
+        contador++;
+    }
+    fclose (arquivo);
+
+    printf("Arquivo SAIDA_1.TXT tem %d distancias.\n", contador);
+
+    if (contador == 0) {
+        printf("Arquivo vazio, nada a fazer.\n");
+        return;
+    }
+    struct ArranjoDouble meuArranjo;
+    meuArranjo.tamanho = contador;
+
+    meuArranjo.dados = (double *) malloc(meuArranjo.tamanho * sizeof(double));
+
+    if (meuArranjo.dados == NULL) {
+        printf("ERRO: Nao foi possivel alocar memoria.\n");
+        return; // Sai se não conseguir memória
+    }
+
+    arquivo = fopen("SAIDA_1.TXT", "r"); // Reabre o arquivo
+    if (arquivo == NULL) {
+        printf("ERRO: Nao foi possivel reabrir o arquivo SAIDA_1.TXT\n");
+        free(meuArranjo.dados); // Libera a memória alocada
+        return;
+    }
+
+    for (int i = 0; i < meuArranjo.tamanho; i++) {
+        fscanf(arquivo, "%lf", &meuArranjo.dados[i]);
+    }
+    fclose(arquivo); 
+
+}
 /*
 Funcao principal.
 */
