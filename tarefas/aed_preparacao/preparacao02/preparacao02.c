@@ -1,5 +1,6 @@
 #include "io.h"
 #include <math.h>
+#include <stdlib.h>
 
 struct Ponto {
     double x;
@@ -37,43 +38,92 @@ struct ArranjoDouble {
 
 void method_02(){
     IO_id("Method 02");
-    FILE *arquivo = fopen("DADOS_1.TXT", "r");
+    FILE *arquivo = fopen("SAIDA_1.TXT", "r");
     int contador = 0;
     double temp;
 
     while (fscanf(arquivo, "%lf", &temp) == 1){
         contador++;
     }
+    struct ArranjoDouble meuArranjo;
+    meuArranjo.tamanho = contador;
+    
+    meuArranjo.dados = (double *) malloc(meuArranjo.tamanho * sizeof(double));
     fclose (arquivo);
 
-    printf("Arquivo SAIDA_1.TXT tem %d distancias.\n", contador);
+    arquivo = fopen("SAIDA_1.TXT", "r");
+    for (int i = 0; i<meuArranjo.tamanho; i++){
+        fscanf(arquivo, "%lf", &meuArranjo.dados[i]);
+    }
+    
 
-    if (contador == 0) {
-        printf("Arquivo vazio, nada a fazer.\n");
-        return;
+    double maiorDistancia = acharMaior(meuArranjo);
+    double menorDistancia = acharMenor(meuArranjo);
+
+    printf("\nMaior distancia: %lf\n", maiorDistancia);
+    printf("Menor distancia: %lf\n", menorDistancia);
+
+    free(meuArranjo.dados);
+    fclose (arquivo); 
+}
+double acharMaior(struct ArranjoDouble meuArranjo){
+    double maior = meuArranjo.dados[0];
+    for(int i = 1; i<meuArranjo.tamanho; i++){
+        if (meuArranjo.dados[i] > maior){
+            maior = meuArranjo.dados[i];
+        }
+    }
+    return maior;
+}
+double acharMenor(struct ArranjoDouble meuArranjo){
+    double menor = meuArranjo.dados[0];
+    for(int i = 1; i<meuArranjo.tamanho; i++){
+        if (meuArranjo.dados[i] < menor){
+            menor = meuArranjo.dados[i];
+        }
+    }
+    return menor;
+}
+
+double calcularSoma (struct ArranjoDouble meuArranjo){
+    double soma = 0.0;
+    for (int i = 0; i<meuArranjo.tamanho; i++){
+        soma += meuArranjo.dados[i]; 
+    }  
+    return soma;
+}
+
+void Method_03 (){
+    IO_id("Method 03");
+    FILE *arquivo = fopen("SAIDA_1.TXT", "r");
+
+    int contador = 0;
+    double temp;
+    double media;
+
+    while (fscanf(arquivo, "%lf", &temp) == 1){
+        contador++;
     }
     struct ArranjoDouble meuArranjo;
     meuArranjo.tamanho = contador;
-
+    
     meuArranjo.dados = (double *) malloc(meuArranjo.tamanho * sizeof(double));
+    fclose (arquivo);
 
-    if (meuArranjo.dados == NULL) {
-        printf("ERRO: Nao foi possivel alocar memoria.\n");
-        return; // Sai se não conseguir memória
-    }
-
-    arquivo = fopen("SAIDA_1.TXT", "r"); // Reabre o arquivo
-    if (arquivo == NULL) {
-        printf("ERRO: Nao foi possivel reabrir o arquivo SAIDA_1.TXT\n");
-        free(meuArranjo.dados); // Libera a memória alocada
-        return;
-    }
-
-    for (int i = 0; i < meuArranjo.tamanho; i++) {
+    arquivo = fopen("SAIDA_1.TXT", "r");
+    for (int i = 0; i<meuArranjo.tamanho; i++){
         fscanf(arquivo, "%lf", &meuArranjo.dados[i]);
     }
-    fclose(arquivo); 
+    fclose(arquivo);
 
+    if (meuArranjo.tamanho > 2){
+     media = (calcularSoma(meuArranjo) - (acharMaior(meuArranjo)+acharMenor(meuArranjo)))/ (meuArranjo.tamanho - 2);
+      printf("A média subtraindo os valores de menor e maior são %lf", media);
+    } else {
+        printf("\nERRO: Nao e possivel calcular a media com menos de 3 valores.\n");
+    } 
+
+    free(meuArranjo.dados);
 }
 /*
 Funcao principal.
@@ -110,8 +160,8 @@ switch ( opcao )
 {
 case 0: /* nao fazer nada */ break;
 case 1: method_01 ( ); break;
-//case 2: method_02 ( ); break;
-//case 3: method_03 ( ); break;
+case 2: method_02 ( ); break;
+case 3: method_03 ( ); break;
 //case 4: method_04 ( ); break;
 //case 5: method_05 ( ); break;
 default: // comportamento padrao
