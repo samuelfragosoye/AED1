@@ -93,14 +93,14 @@ struct matriz {
 };
 
 void Method_04(){
-    int x, y, z;
+    double x, y, z;
     int cont = 0;
     FILE *arquivo = fopen("DADOS_RAPIDO.TXT", "r");
     if (arquivo == NULL){
         printf("ERRO");
         return;
     }
-    while(fscanf(arquivo, "%lf %lf %lf", &x, &y, &z)){
+    while(fscanf(arquivo, "%lf %lf %lf", &x, &y, &z)==3){
         cont++;
     }
     fclose(arquivo);
@@ -109,7 +109,22 @@ void Method_04(){
     minhaMatriz.colunas = 3;
 
     minhaMatriz.dados = (double**) malloc(minhaMatriz.linhas * sizeof(double *));
-    
+    for(int i = 0; i < minhaMatriz.linhas; i++){
+        minhaMatriz.dados[i] = (double *) malloc(minhaMatriz.linhas[i] * sizeof(double));
+
+    }
+    arquivo = fopen("DADOS_RAPIDO.TXT", "r");
+    if (arquivo == NULL){
+        printf("ERRO");
+        return;
+    }
+    for (int i = 0; i < minhaMatriz.linhas; i++){
+        fscanf(arquivo, "%lf %lf %lf", 
+                        &minhaMatriz.dados[i][0]
+                        &minhaMatriz.dados[i][1]
+                        &minhaMatriz.dados[i][2]);
+    }
+    fclose(arquivo);    
 }
 
 int main ( int argc, char* argv [ ] )
