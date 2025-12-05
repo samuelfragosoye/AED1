@@ -10,7 +10,7 @@ Aqui estão organizados os estudos dirigidos, exercícios e demais conteúdos pr
   
 - **Resumo de Artigo – LaTeX**  
   Arquivo em LaTeX contendo o esboço e o resumo estruturado do artigo solicitado.  
-  ➜ [Acessar arquivo](esboco_artigo)
+  ➜ [Acessar pasta](esboco_artigo)
 
 ## 👨‍💻 Autor
 
