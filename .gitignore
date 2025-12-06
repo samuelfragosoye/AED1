@@ -1,0 +1,29 @@
+# Binários
+*.exe
+*.dll
+*.so
+*.out
+*.o
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Logs gerais
+*.log
+
+# Compilação
+/dist/
+/build/
+/target/
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+
+# Ambientes
+.env
+.env.*
