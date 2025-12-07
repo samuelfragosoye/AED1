@@ -2,7 +2,7 @@
 #define _ARRAYS_H_
 
 #include <iostream>
-#include <iomanip> // Para formatacao
+#include <iomanip> 
 
 using namespace std;
 
@@ -21,6 +21,18 @@ class Arrays {
                 cont++;
             }
         }
+        
+        int* resp = new int[cont + 1];
+        resp[0] = cont;
+
+        int k = 1;
+        for(int i = 1; i<=len; i++){
+            if(array[i] != val){
+                resp[k]= array[i];
+                k++;
+            }
+        }
+        return resp;
     }
 };
 
